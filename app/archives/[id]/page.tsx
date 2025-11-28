@@ -13,13 +13,19 @@ interface ArchiveMeta {
 export default async function ArchiveView({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
+
   const filePath = path.join(
     process.cwd(),
     "content/archives",
-    `${params.id}.json`
+    `${id}.json`
   );
+
+  console.log("DEBUG: Checking path:", filePath);
+  console.log("DEBUG: Exists?:", fs.existsSync(filePath));
+  console.log("DEBUG: Current working directory:", process.cwd());
 
   if (!fs.existsSync(filePath)) {
     return <div>Archive not found.</div>;
