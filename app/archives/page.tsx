@@ -8,34 +8,47 @@ interface ArchiveMeta {
   locked: boolean;
 }
 
-export default function ArchivesHome() {
-  const contentPath = path.join(process.cwd(), "content/archives");
+export default function ArchiveIndex() {
+  const archivesDir = path.join(process.cwd(), "content/archives");
 
-  const files = fs.readdirSync(contentPath)
-    .filter(file => file.endsWith(".json"))
-    .map(file => {
-      const raw = fs.readFileSync(path.join(contentPath, file), "utf-8");
+  const archives = fs.readdirSync(archivesDir)
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(archivesDir, file), "utf-8");
       return JSON.parse(raw) as ArchiveMeta;
     });
 
   return (
     <main>
-      <h1 className="text-3xl mb-6">ARCHIVE DIRECTORY</h1>
+      <h1 className="text-4xl font-bold mb-6 tracking-wide">ARCHIVE DIRECTORY</h1>
 
-      <ul className="space-y-4">
-        {files.map((meta) => (
-          <li key={meta.id} className="border border-[#0aff9d55] p-4 rounded">
-            <a href={`/archives/${meta.id}`}>
+      <p className="opacity-80 mb-8">
+        Select a category to view available files.  
+        Locked categories will require keys.
+      </p>
 
-              <h2 className="text-xl">
-                {meta.title} {meta.locked && <span className="opacity-50">(LOCKED)</span>}
-              </h2>
+      <div className="space-y-5">
+        {archives.map((archive) => (
+          <a
+            key={archive.id}
+            href={`/archives/${archive.id}`}
+            className="block p-5 rounded border border-[#0aff9d55] hover:bg-[#0aff9d11] transition"
+          >
+            <h2 className="text-2xl">
+              {archive.title}{" "}
+              {archive.locked && (
+                <span className="text-red-500 opacity-70">(LOCKED)</span>
+              )}
+            </h2>
 
-              <p className="text-sm opacity-70">{meta.description}</p>
-            </a>
-          </li>
+            <p className="opacity-70 text-sm mt-1">{archive.description}</p>
+          </a>
         ))}
-      </ul>
+      </div>
+
+      <footer className="opacity-40 text-xs mt-20">
+        INDEX GENERATED FROM LOCAL METADATA  
+      </footer>
     </main>
   );
 }
