@@ -10,8 +10,16 @@ interface ArchiveMeta {
   locked: boolean;
 }
 
-export default function ArchiveView({ params }: { params: { id: string } }) {
-  const filePath = path.join(process.cwd(), "content/archives", `${params.id}.json`);
+export default async function ArchiveView({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const filePath = path.join(
+    process.cwd(),
+    "content/archives",
+    `${params.id}.json`
+  );
 
   if (!fs.existsSync(filePath)) {
     return <div>Archive not found.</div>;
