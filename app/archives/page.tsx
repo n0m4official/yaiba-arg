@@ -8,7 +8,7 @@ interface ArchiveMeta {
   locked: boolean;
 }
 
-export default function ArchiveIndex() {
+export default async function ArchiveIndex() {
   const archivesDir = path.join(process.cwd(), "content/archives");
 
   const archives = fs.readdirSync(archivesDir)
