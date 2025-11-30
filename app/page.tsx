@@ -55,7 +55,7 @@ export default function Home() {
       <footer className="opacity-40 text-xs mt-20">
         SYSTEM STATUS: ONLINE  
         <br />  
-        REVISION: 0.1.0  
+        REVISION: 0.5.0  
       </footer>
     </main>
   );
