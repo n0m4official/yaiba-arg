@@ -2,6 +2,7 @@
   "id": "locked_test",
   "title": "Placeholder Locked Archive",
   "description": "This is a sample archive used for testing.",
-  "locked": true
+  "locked": true,
+  "files": []
 }
 

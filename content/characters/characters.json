@@ -1,0 +1,11 @@
+{
+  "category": "characters",
+  "items": [
+    {
+      "id": "placeholder_character_1",
+      "name": "Placeholder Character",
+      "summary": "This is a placeholder character entry.",
+      "status": "unknown"
+    }
+  ]
+}

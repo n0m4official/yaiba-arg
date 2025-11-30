@@ -1,0 +1,11 @@
+{
+  "category": "factions",
+  "items": [
+    {
+      "id": "placeholder_faction_1",
+      "name": "Placeholder Faction",
+      "summary": "This is a placeholder faction description.",
+      "status": "unverified"
+    }
+  ]
+}

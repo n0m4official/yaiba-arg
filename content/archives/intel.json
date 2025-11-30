@@ -2,5 +2,6 @@
   "id": "intel",
   "title": "Placeholder Archive",
   "description": "This is a sample archive used for testing.",
-  "locked": false
+  "locked": false,
+  "files": []
 }
