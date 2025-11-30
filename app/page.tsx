@@ -14,29 +14,42 @@ export default function Home() {
       </p>
 
       <div className="space-y-4">
-        <Link
+
+        <TerminalLink
           href="/archives"
-          className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
-        >
-          <h2 className="text-2xl">ARCHIVES DIRECTORY →</h2>
-          <p className="opacity-70 text-sm">Access recovered files and classified materials.</p>
-        </Link>
+          title="ARCHIVES DIRECTORY →"
+          desc="Access recovered files and classified materials."
+        />
 
-        <Link
+        <TerminalLink
           href="/unlock"
-          className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
-        >
-          <h2 className="text-2xl">UNLOCK TERMINAL →</h2>
-          <p className="opacity-70 text-sm">Submit keys to gain deeper system access.</p>
-        </Link>
+          title="UNLOCK TERMINAL →"
+          desc="Submit keys to gain deeper system access."
+        />
 
-        <Link
+        <TerminalLink
           href="/factions"
-          className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
-        >
-          <h2 className="text-2xl">FACTION INDEX →</h2>
-          <p className="opacity-70 text-sm">Cross-reference active groups and entities.</p>
-        </Link>
+          title="FACTION INDEX →"
+          desc="Cross-reference active groups and entities."
+        />
+
+        <TerminalLink 
+          href="/missions" 
+          title="MISSIONS →" 
+          desc="View pending operations." 
+        />
+
+        <TerminalLink 
+          href="/logs" 
+          title="LOGS →" 
+          desc="View logs." 
+        />
+
+        <TerminalLink 
+          href="/characters" 
+          title="CHARACTERS →" 
+          desc="View characters." 
+        />
       </div>
 
       <footer className="opacity-40 text-xs mt-20">
@@ -45,5 +58,25 @@ export default function Home() {
         REVISION: 0.1.0  
       </footer>
     </main>
+  );
+}
+
+function TerminalLink({
+  href,
+  title,
+  desc,
+}: {
+  href: string;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
+    >
+      <h2 className="text-2xl">{title}</h2>
+      <p className="opacity-70 text-sm">{desc}</p>
+    </Link>
   );
 }
