@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-start justify-start p-10">
@@ -12,29 +14,29 @@ export default function Home() {
       </p>
 
       <div className="space-y-4">
-        <a
+        <Link
           href="/archives"
           className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
         >
           <h2 className="text-2xl">ARCHIVES DIRECTORY →</h2>
           <p className="opacity-70 text-sm">Access recovered files and classified materials.</p>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/unlock"
           className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
         >
           <h2 className="text-2xl">UNLOCK TERMINAL →</h2>
           <p className="opacity-70 text-sm">Submit keys to gain deeper system access.</p>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/factions"
           className="block border border-[#0aff9d55] p-4 rounded hover:bg-[#0aff9d11] transition"
         >
           <h2 className="text-2xl">FACTION INDEX →</h2>
           <p className="opacity-70 text-sm">Cross-reference active groups and entities.</p>
-        </a>
+        </Link>
       </div>
 
       <footer className="opacity-40 text-xs mt-20">
