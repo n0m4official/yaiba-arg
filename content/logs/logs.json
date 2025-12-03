@@ -1,0 +1,11 @@
+{
+  "category": "logs",
+  "entries": [
+    {
+      "id": "log_entry_1",
+      "timestamp": "0000-00-00T00:00:00Z",
+      "summary": "Placeholder log entry for testing.",
+      "details": "No additional data available."
+    }
+  ]
+}

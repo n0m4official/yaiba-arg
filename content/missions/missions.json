@@ -1,0 +1,11 @@
+{
+  "category": "missions",
+  "list": [
+    {
+      "id": "mission_1",
+      "title": "Placeholder Mission",
+      "summary": "A placeholder mission used for testing layout and structure.",
+      "status": "pending"
+    }
+  ]
+}
