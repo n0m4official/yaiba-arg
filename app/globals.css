@@ -16,3 +16,116 @@ a:hover {
 ::selection {
   background: #00ffaa44;
 }
+
+.cyber-glitch {
+  position: relative;
+  display: inline-block;
+}
+
+/* the normal text */
+.cyber-glitch-base {
+  display: inline-block;
+  animation: glitch-base-mask 7.2s infinite steps(1, end);
+}
+
+/* glitch layers – only visible during burst */
+.cyber-glitch::before,
+.cyber-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0; /* default: invisible */
+}
+
+/* CYAN layer */
+.cyber-glitch::before {
+  text-shadow: -2px 0 #00eaff;
+  animation: glitch-burst-before 7.2s infinite steps(1, end);
+}
+
+/* MAGENTA layer */
+.cyber-glitch::after {
+  text-shadow: 2px 0 #ff00ff;
+  animation: glitch-burst-after 7.2s infinite steps(1, end);
+}
+
+/* BASE TEXT: visible most of the time, hidden during glitch window */
+@keyframes glitch-base-mask {
+  0%,
+  79%,
+  83%,
+  100% {
+    opacity: 1;
+  }
+
+  /* glitch burst: text cleared */
+  80%,
+  81%,
+  82% {
+    opacity: 0;
+  }
+}
+
+/* CYAN GLITCH BURST */
+@keyframes glitch-burst-before {
+  0%,
+  79%,
+  83%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translate(-4px, -2px);
+    clip-path: inset(8% 0 55% 0);
+  }
+  81% {
+    opacity: 1;
+    transform: translate(2px, 1px);
+    clip-path: inset(40% 0 25% 0);
+  }
+  82% {
+    opacity: 1;
+    transform: translate(-2px, 3px);
+    clip-path: inset(65% 0 0 0);
+  }
+}
+
+/* MAGENTA GLITCH BURST */
+@keyframes glitch-burst-after {
+  0%,
+  79%,
+  83%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translate(3px, 1px);
+    clip-path: inset(0 0 70% 0);
+  }
+  81% {
+    opacity: 1;
+    transform: translate(-3px, -2px);
+    clip-path: inset(50% 0 15% 0);
+  }
+  82% {
+    opacity: 1;
+    transform: translate(1px, -3px);
+    clip-path: inset(20% 0 50% 0);
+  }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  50% { transform: skew(1deg); }
+  100% { transform: skew(0deg); }
+}

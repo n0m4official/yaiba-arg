@@ -2,8 +2,23 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-start justify-start p-10">
-      <h1 className="text-4xl font-bold mb-6 tracking-wide">
+    <main className="min-h-screen flex flex-col items-center justify-center p-10">
+      <h1 className="text-4xl font-bold mb-6 tracking-wide text-red-500 opacity-90 text-center">
+        <span
+          className="cyber-glitch"
+          data-text="O F F L I N E ∷ ∷ ∷ SIGNAL LOST ∷ ∷ ∷"
+        >
+          <span className="cyber-glitch-base">
+            O F F L I N E
+            <br />
+            <br />
+            ∷ ∷ ∷ SIGNAL LOST ∷ ∷ ∷
+          </span>
+        </span>
+      </h1>
+
+      {/* KEEPING THE COMMENTED SECTION EXACTLY AS IS */}
+      {/*<h1 className="text-4xl font-bold mb-6 tracking-wide">
         YAIBA // ARCHIVE TERMINAL
       </h1>
 
@@ -56,20 +71,12 @@ export default function Home() {
         SYSTEM STATUS: ONLINE  
         <br />  
         REVISION: 0.5.0  
-      </footer>
+      </footer>*/}
     </main>
   );
 }
 
-function TerminalLink({
-  href,
-  title,
-  desc,
-}: {
-  href: string;
-  title: string;
-  desc: string;
-}) {
+function TerminalLink({ href, title, desc }: any) {
   return (
     <Link
       href={href}
