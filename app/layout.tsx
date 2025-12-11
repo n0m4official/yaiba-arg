@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "YAIBA ARCHIVE NETWORK",
-  description: "Secure Access Terminal"
+  title: "OFFLINE",
+  description: "ERROR 404: SIGNAL LOST",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
